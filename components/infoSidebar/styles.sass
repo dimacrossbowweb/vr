@@ -1,0 +1,61 @@
+.info-sidebar
+
+    $info-sidebar-selector: &
+
+    position: fixed
+
+    display: flex
+
+    align-items: center
+
+    height: 100%
+
+    top: 0
+
+    pointer-events: none
+
+    z-index: 2000000
+    
+
+    &__board
+
+        transform-style: preserve-3d
+
+        pointer-events: auto
+
+        transition: transform .4s
+
+
+    &_right
+
+        #{$info-sidebar-selector}__board
+
+            transform: perspective(900px) rotateY(-20deg)
+            
+
+            &:hover
+            
+                transform: perspective(900px) rotateY(0deg)
+
+    
+
+    &_left
+
+        #{$info-sidebar-selector}__board
+
+            transform: perspective(900px) rotateY(20deg)
+
+            &:hover
+            
+                transform: perspective(900px) rotateY(0deg)
+
+
+.info-side-bar-enter-active, .info-side-bar-leave-active
+
+  transition: all .5s
+
+.info-side-bar-enter, .info-side-bar-leave-to
+
+  opacity: 0
+
+  transform: translateX(-100%) rotateY(90deg)

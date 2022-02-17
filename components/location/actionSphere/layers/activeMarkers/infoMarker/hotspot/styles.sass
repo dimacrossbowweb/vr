@@ -1,0 +1,447 @@
+.hotspot
+
+    $hotspot-selector: &
+
+    position: absolute
+
+    width: 300px
+
+    height: 300px
+
+    box-sizing: border-box
+
+    padding: 2px
+
+    cursor: pointer
+
+    transition: opacity .5s
+
+    border-radius: 100%
+
+
+    &__lighting
+
+        display: none
+
+        position: absolute
+
+        left: 0
+
+        top: 0
+
+        width: 100%
+
+        height: 100%
+
+        // left: -30px
+
+        // top: -30px
+
+        // width: calc(100% + 60px)
+
+        // height: calc(100% + 60px)
+
+        box-shadow: 0px 10px 20px #fd0000
+
+        border-radius: 100%
+
+        transition: all .3s
+
+        animation:
+
+            name: lighting-animation
+
+            duration: 2s
+
+            iteration-count: infinite
+
+
+        @keyframes lighting-animation
+
+            0%
+
+                box-shadow: 0px 10px 20px #fd0000
+
+            50%
+
+                box-shadow: 0px 20px 60px #fd0000
+
+            100%
+
+                box-shadow: 0px 10px 20px #fd0000
+
+
+    &__tablet
+
+        position: absolute
+
+        margin: auto
+
+        left: 0
+
+        top: 0
+
+        right: 0
+
+        bottom: 0
+
+        width: 55%
+
+        height: 55%
+
+        border-radius: 100%
+
+        border: 3px solid #ffffff
+
+        // background-color: #ffffffa8
+
+        padding: 10px
+
+        font:
+
+            size: 18px
+
+            weight: thin
+
+            family: Arial, Tahoma
+
+        color: #ffffff
+
+        letter-spacing: 5px
+
+        transition: all .4s
+
+    &__tablet-container
+
+        position: relative
+
+        width: 100%
+
+        height: 100%
+
+        display: flex
+
+        justify-content: center
+
+        align-items: center
+
+        flex-direction: column
+
+    &__tablet-divider
+
+        border-top: 1px solid #ffffff
+
+        width: 70%
+
+        height: 1px
+
+        margin: 5px 0
+
+        
+    &__wrapper
+
+        position: absolute
+
+        width: 100%
+
+        height: 100%
+
+        left: 0
+
+        top: 0
+
+        display: grid
+
+        grid-template-columns: 1fr 1fr
+
+        grid-template-rows: 1fr 1fr
+
+        // background-color: rgba(220, 40, 40, 0.6)
+
+        transform: rotate(45deg) scale(1)
+
+        animation:
+
+            name: wrapper-animation
+
+            duration: 35s
+
+            iteration-count: infinite
+
+            timing-function: linear
+
+
+        @keyframes wrapper-animation
+
+            0%
+
+                transform: rotate(0)
+
+            100%
+
+                transform: rotate(360deg)
+
+        
+    &__sector
+
+        transition: all 0.5s
+
+        &:nth-child(1)
+
+            margin: 0 1px 1px 0
+
+            border-radius: 100% 0 0 0
+
+            background: radial-gradient(at bottom right, transparent 0%, transparent 40%, #7b7b7b 41%, #b1b1b1 46%, #b1b1b1 65%, #e8e8e8 69%, #e8e8e8 100%)
+
+            &:hover
+                    
+                // background: radial-gradient(at bottom right, transparent 0%, transparent 40%, #3a3a3ab3 41%, #3a3a3ab3 100%)
+
+                transform: translate(-7px, -7px) scale(1.1)
+
+
+            #{$hotspot-selector}__btn-icon
+
+                position: absolute
+
+                left: 55px
+
+                top: 55px
+
+            &#{$hotspot-selector}__sector_selected
+
+                transform: translate(-7px, -7px) scale(1.1)
+
+
+
+        &:nth-child(2)
+
+            margin: 0 0 1px 1px
+
+            border-radius: 0 100% 0 0
+
+            background: radial-gradient(at bottom left, transparent 0%, transparent 40%, #7b7b7b 41%, #b1b1b1 46%, #b1b1b1 65%, #e8e8e8 69%, #e8e8e8 100%)
+
+            &:hover
+                    
+                // background: radial-gradient(at bottom left, transparent 0%, transparent 40%, #3a3a3ab3 41%, #3a3a3ab3 100%)
+
+                transform: translate(7px, -7px) scale(1.1)
+
+
+            #{$hotspot-selector}__btn-icon
+
+                position: absolute
+
+                right: 55px
+
+                top: 55px  
+
+
+
+        &_text
+
+            margin: 1px 1px 0 0
+
+            border-radius: 0 0 0 100%
+
+            background: radial-gradient(at top right, transparent 0%, transparent 40%, #7b7b7b 41%, #b1b1b1 46%, #b1b1b1 65%, #e8e8e8 69%, #e8e8e8 100%)
+
+            &:hover
+                    
+                // background: radial-gradient(at top right, transparent 0%, transparent 40%, #bb2727b3 41%, #3ddd4fb3 100%)
+
+                transform: translate(-7px, 7px) scale(1.1)
+
+
+            #{$hotspot-selector}__btn-icon
+
+                position: absolute
+
+                left: 55px
+
+                bottom: 55px
+
+            &_selected
+
+                background: radial-gradient(at top right, transparent 0%, transparent 40%, #8a0000 41%, #bf0000 46%, #bf0000 65%, #fd0303 69%, #fd0303 100%)
+
+
+        &:nth-child(4)
+
+            margin: 1px 0 0 1px
+
+            border-radius: 0 0 100% 0
+
+            background: radial-gradient(at top left, transparent 0%, transparent 40%, #7b7b7b 41%, #b1b1b1 46%, #b1b1b1 65%, #e8e8e8 69%, #e8e8e8 100%)
+
+            &:hover
+                
+
+                transform: translate(7px, 7px) scale(1.1)
+
+            // &_selected
+
+            //     background: radial-gradient(at top left, transparent 0%, transparent 40%, #3a3a3ab3 41%, #3a3a3ab3 100%)
+
+
+            #{$hotspot-selector}__btn-icon
+
+                position: absolute
+
+                right: 55px
+
+                bottom: 55px
+
+    &__btn-icon
+
+        transform: rotate(-45deg)
+
+
+    &__footnote
+
+        display: flex
+
+        align-items: center
+
+        position: absolute
+
+        margin: auto
+
+        left: calc(100% + 30px)
+
+        top: 0
+
+        bottom: 0
+
+        color: #ffffffcd
+
+        font: 
+
+            family: Arial, Tahoma
+
+            size: 32px
+
+            weight: bold
+
+        text-transform: uppercase
+
+        line-height: 32px
+
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5)
+
+        opacity: 0
+
+        transform: translateX(30px)
+
+        transition: all .4s
+
+        pointer-events: none
+
+
+
+    &_hidden
+
+        display: none
+
+
+    &_hovered:not(&_selected)
+
+        #{$hotspot-selector}__tablet
+
+            background-color: #ce15159a
+
+            box-shadow: 0 0 15px rgb(255, 255, 255)
+
+
+        #{$hotspot-selector}__footnote
+
+            opacity: 1
+
+            transform: translateX(0)
+
+
+    &_selected
+
+        background-color: #1c1c1cee
+
+        #{$hotspot-selector}__tablet
+
+            background:
+
+                // image: url(/dynamic.jpg)
+
+                size: cover
+
+                position: center
+
+                color: #1f1f1fee
+
+            box-shadow: inset -8px -8px 8px #373636c1, inset 7px 7px 10px #929292c1
+
+            border: none
+
+        // #{$hotspot-selector}__tablet-container
+
+        //     display: none
+
+        #{$hotspot-selector}__lighting
+
+            display: block
+
+
+.hostpot-select-animation-enter-active, .hostpot-select-animation-leave-active 
+  
+    transition: all .5s
+
+.hostpot-select-animation-enter, .hostpot-select-animation-leave-to
+  
+    opacity: 0
+
+    transform: rotate(0deg) scale(0)
+
+
+
+    // &__board
+
+    //     pointer-events: none
+
+    //     opacity: 0
+
+    //     transform: scale(1.1)
+
+    //     transition: all 0.4s
+
+    // &__line
+
+    //     pointer-events: none
+
+    //     opacity: 0
+
+    //     transition: all 0.2s
+
+    // &_selected
+
+    //     // #{$hotspot-selector}__marker
+
+    //     //     background-color: rgba(200, 50, 50, 0.6)
+
+
+    //     #{$hotspot-selector}__board
+
+    //         opacity: 1
+
+    //         transform: scale(1) translateY(0)
+
+    //         pointer-events: auto
+
+    //     #{$hotspot-selector}__line
+
+    //         opacity: 1
+
+    //         transition-delay: .2s
+
+    // &_hidden
+
+    //     display: none

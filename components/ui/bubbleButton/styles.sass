@@ -1,0 +1,121 @@
+.bubble-button
+
+    $bubble-button-selector: &
+
+    display: flex
+
+    justify-content: center
+
+    align-items: center
+
+    position: relative
+
+    background: rgba(51, 51, 51, 0.01)
+
+    transition: all .4s
+
+    box-shadow: inset 10px 10px 10px #ffffff88, inset -10px -10px 10px #fffdfd94
+
+    box-sizing: border-box
+
+    overflow: hidden
+
+    font:
+
+        size: 22px
+
+        family: Arial, Tahoma
+
+        weight: lighter
+
+    text-transform: uppercase
+
+    text-align: center
+
+    letter-spacing: 5px
+
+    color: rgba(255, 255, 255, 0.9)
+
+
+    &_hovered
+
+        transform: scale(1.1)
+
+
+        &:after 
+
+            content: ''
+
+            display: block
+
+            position: absolute
+
+            width: 100%
+
+            height: 100%
+
+            left: 0
+
+            top: 0
+
+            box-shadow: inset 10px 10px 10px #bf2318, inset -10px -10px 10px rgba(0,0,0,0)
+
+            border-radius: 100%
+
+            animation: rotate 3s infinite linear
+
+            -webkit-animation: rotate 3s infinite linear
+
+
+            @keyframes rotate
+                0% 
+                    -webkit-transform: rotate(0deg)
+                
+                100%
+
+                    -webkit-transform: rotate(360deg)
+
+            
+        &:before
+
+            content: ''
+
+            display: block
+
+            position: absolute
+
+            width: 100%
+
+            height: 100%
+
+            left: 0
+
+            top: 0
+
+            box-shadow: inset 10px 10px 10px rgba(0,0,0,0), inset -10px -10px 10px #a21a02
+
+            border-radius: 100%
+
+            animation: rotate2 5s infinite linear
+
+            -webkit-animation: rotate2 5s infinite linear
+
+
+            @keyframes rotate2
+                0% 
+                    -webkit-transform: rotate(0deg)
+                
+                100%
+
+                    -webkit-transform: rotate(-360deg)     
+
+
+    &_hovered
+
+        #{$bubble-button-selector}:after
+
+            display: block
+
+        #{$bubble-button-selector}:before
+
+            display: block
